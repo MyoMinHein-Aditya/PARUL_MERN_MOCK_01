@@ -1,0 +1,55 @@
+Javascript Debug
+
+1. Page keeps refreshing
+
+- Problem: Clicking submit refreshes the page, so the new student card disappears.
+- Fix: Add event.preventDefault(); at the start of the form code.
+
+2. Empty names get added
+
+- Problem: The alert shows, but the code keeps running and adds an empty card.
+- Fix: Add return; inside the empty-name check to stop the code.
+
+3. Delete button does not work
+
+- Problem: The click code looks for .delete-btn, but the button does not have that class.
+- Fix: Add deleteButton.classList.add("delete-btn"); when creating the button.
+
+Corrected Method
+
+form.addEventListener(
+    "submit",
+    function (event) {
+        event.preventDefault();
+
+        const name =
+            studentName.value;
+
+        if (name.trim() === "") {
+            alert("Name is required");
+            return; 
+        }
+
+        const card =
+            document.createElement("div");
+
+        card.classList.add("student-card");
+
+        const heading =
+            document.createElement("h3");
+
+        heading.textContent =
+            name;
+
+        const deleteButton =
+            document.createElement("button");
+
+        deleteButton.textContent ="Delete";
+
+        deleteButton.classList.add("delete-btn"); 
+        card.appendChild(heading);
+        card.appendChild(deleteButton);
+
+        studentContainer.appendChild(card);
+    }
+);
