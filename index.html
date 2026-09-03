@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="headr">
+        <h1>Student Application Management System</h1>
+        <h3>Register and manage student applications</h3>
+    </div>
+
+    <form class="form" id="studentForm" novalidate>
+        <h4>Enter Student Details:</h4>
+        <div class="studentdetail">
+            <input type="text" id = "name" placeholder="Enter Student Name">
+            <input type="email" id="email" placeholder="Enter Student Email">
+            <input type="text" id="phnum" placeholder="Enter Student Phone Number">
+            <input type="date" id="dob" placeholder="Enter Student Date of Birth">
+            <label><input type="radio" id="male" name="gender" value="Male">Male</label>
+            <label><input type="radio" id="female" name="gender" value="Female">Female</label>
+        </div>
+        <h4>Select the Course:</h4>
+        <div class="coursebox">
+            <select id="course">
+                <option value="course1">Select Course</option>
+                <option value="course2">Web Development</option>
+                <option value="course3">UI/UX</option>
+                <option value="course4">Data Analytics</option>
+                <option value="course5">MERN Stack</option>
+                <option value="course6">Cloud Computing</option>
+            </select>
+        </div>
+        <h4>Select the Skills:</h4>
+        <div class="skillsbox">
+            <input type="checkbox" id="skill1" name="skills" value="HTML">
+            <label for="skill1">HTML</label>
+            <input type="checkbox" id="skill2" name="skills" value="CSS">
+            <label for="skill2">CSS</label>
+            <input type="checkbox" id="skill3" name="skills" value="JavaScript">
+            <label for="skill3">JavaScript</label>
+            <input type="checkbox" id="skill4" name="skills" value="Git">
+            <label for="skill4">Git</label>
+            <input type="checkbox" id="skill5" name="skills" value="React">
+            <label for="skill5">React</label>
+            <input type="checkbox" id="skill6" name="skills" value="Node.js">
+            <label for="skill6">Node.js</label>
+        </div>
+        <h4>About the Student:</h4>
+        <div class="aboutstudent">
+            <textarea id="about" placeholder="Maximum 200 characters"></textarea>
+        </div>
+        <h4>Upload Student Profile Picture:</h4>
+        <div class="profilepic">
+            <input type="file" id="profilepic" accept="image/*">
+        </div>
+
+        <div class="formbutton">
+            <button type="submit" id="submit">Register Student</button>
+            <button type="reset" id="reset">Reset Form</button>
+        </div>
+    </form>
+
+    <div class="student-results">
+        <h4>Statistics:</h4>
+        <div class="stats-side">
+            <div class="statistics">
+                <p class="total-students">Total Students: 0</p>
+                <div class="course-statistics"></div>
+            </div>
+        </div>
+        <div class="cards-side">
+            <h4>Student Cards: </h4>
+            <div class="student-card-template" hidden>
+                <div class="card-header">
+                    <h3 class="student-name"></h3>
+                </div>
+                <div class="card-body">
+                    <p class="student-photo"></p>
+                    <p class="student-email"></p>
+                    <p class="student-phone"></p>
+                    <p class="student-dob"></p>
+                    <p class="student-gender"></p>
+                    <p class="student-course"></p>
+                    <strong>Skills:</strong>
+                    <p class="student-skills"></p>
+                    <strong>About:</strong>
+                    <p class="student-about"></p>
+                </div>
+                <div class="card-footer">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+            <div class="cards-container">
+                <div class="student-card">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
